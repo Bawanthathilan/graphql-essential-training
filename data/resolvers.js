@@ -35,6 +35,15 @@ const resolvers = {
         } catch (error) {
             throw new Error(error)
         }
+    },
+
+    deleteProduct:async({id})=>{
+        try {
+            await Widgets.deleteOne({_id:id})
+            return "Deleted successfully"
+        } catch (error) {
+            throw new Error(error)
+        }
     }
 
     // createProduct:({input})=>{
