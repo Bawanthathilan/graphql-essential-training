@@ -26,6 +26,15 @@ const resolvers = {
         } catch (error) {
             throw new Error(error)
         }
+    },
+
+    updateProduct:async({input})=>{
+        try {
+            const updateWidget = await Widgets.findOneAndUpdate({_id:input.id} , input , {new:true});
+            return updateWidget
+        } catch (error) {
+            throw new Error(error)
+        }
     }
 
     // createProduct:({input})=>{
